@@ -1,7 +1,7 @@
 <?php
 $tns = "
 (DESCRIPTION=
-(ADDRESS_LIST= (ADDRESS=(PROTOCOL=TCP)(HOST=cnusdlab.synology.me)(PORT=1521)))
+(ADDRESS_LIST= (ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))
 (CONNECT_DATA= (SERVICE_NAME=XE))
 )
 ";
@@ -9,6 +9,7 @@ $dsn = "oci:dbname=".$tns.";charset=utf8";
 $username = 'c##madang';
 $password = 'madang';
 $searchWord = $_GET['searchWord'] ?? '';
+
 try {
 $conn = new PDO($dsn, $username, $password);
 } catch (PDOException $e) {
@@ -59,6 +60,7 @@ while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 <?php
 }
 ?>
+
 </tbody>
 </table>
 <div class="d-grid d-md-flex justify-content-md-end">

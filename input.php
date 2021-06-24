@@ -7,7 +7,7 @@ $price = '';
 if ($mode == 'modify') {
 $tns = "
 (DESCRIPTION=
-(ADDRESS_LIST= (ADDRESS=(PROTOCOL=TCP)(HOST=cnusdlab.synology.me)(PORT=1521)))
+(ADDRESS_LIST= (ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))
 (CONNECT_DATA= (SERVICE_NAME=XE))
 )
 ";

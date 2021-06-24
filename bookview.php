@@ -1,7 +1,7 @@
 <?php
 $tns = "
 (DESCRIPTION=
-(ADDRESS_LIST= (ADDRESS=(PROTOCOL=TCP)(HOST=cnusdlab.synology.me)(PORT=1521)))
+(ADDRESS_LIST= (ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))
 (CONNECT_DATA= (SERVICE_NAME=XE))
 )
 ";
@@ -65,16 +65,16 @@ a { text-decoration: none; }
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 <a href="booklist.php" class="btn btn-success">목록</a>
 <a href="input.php?bookId=<?= $bookId ?>&mode=modify" class="btn btn-warning">수정</a>
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bstarget="#deleteConfirmModal">삭제</button>
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal">삭제</button>
 </div>
 </div>
 <!-- Delete Confirm Modal -->
-<div class="modal fade" id="deleteConfirmModal" aria-labelledby="deleteConfirmModalLabel" ariahidden="true">
+<div class="modal fade" id="deleteConfirmModal" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
 <h5 class="modal-title" id="deleteConfirmModalLabel"><?= $bookName ?></h5>
-<button type="button" class="btn-close" data-bs-dismiss="modal" arialabel="Close"></button>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
 위의 책을 삭제하시겠습니까?
