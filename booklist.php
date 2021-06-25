@@ -11,9 +11,9 @@ $password = 'madang';
 $searchWord = $_GET['searchWord'] ?? '';
 
 try {
-$conn = new PDO($dsn, $username, $password);
+    $conn = new PDO($dsn, $username, $password);
 } catch (PDOException $e) {
-echo("에러 내용: ".$e -> getMessage());
+    echo("에러 내용: ".$e -> getMessage());
 }
 ?>
 
@@ -60,16 +60,16 @@ echo("에러 내용: ".$e -> getMessage());
                     ?>
                 </tbody>
                 </table>
-
+            
             <div class="d-grid d-md-flex justify-content-md-end"> <!--입력 단추용 -->
                 <a href="input.php?mode=insert" class="btn btn-primary">등록</a> 
             </div>
-    
+                    
         <form class="row">
             <div class="col-10"> <!--검색어 입력용 -->
                 <label for="searchWord" class="visually-hidden">Search Word</label>
                 <input type="text" class="form-control" id="searchWord" name="searchWord" placeholder="검색어 입력" value="<?= $searchWord ?>">
-            </div>
+            </div> <!-- 입력한 값이 searchWord 로 들어감 -->
 
             <div class="col-auto text-end"> <!--검색 단추용 -->
                 <button type="submit" class="btn btn-primary mb-3">검색</button>

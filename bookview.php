@@ -63,8 +63,13 @@ a { text-decoration: none; }
 ?>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<a href="booklist.php" class="btn btn-success">목록</a>
-<a href="input.php?bookId=<?= $bookId ?>&mode=modify" class="btn btn-warning">수정</a>
+    <a href="booklist.php" class="btn btn-success">목록</a>
+    <a href="input.php?bookId=<?= $bookId ?>&mode=modify" class="btn btn-warning">수정</a>
+    <a href="input.php?bookId=<?= $bookId ?>&mode=modify" class="btn btn-warning">대출</a>
+    <a href="input.php?bookId=<?= $bookId ?>&mode=modify" class="btn btn-warning">예약</a>
+    <a href="input.php?bookId=<?= $bookId ?>&mode=modify" class="btn btn-warning">반납</a>
+
+
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal">삭제</button>
 </div>
 </div>

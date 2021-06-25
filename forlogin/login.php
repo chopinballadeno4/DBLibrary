@@ -14,7 +14,7 @@
   </head>
   
   <body>
-    <h1>배성민 서점</h1><br></br>  <!-- -->
+    <h1>서점</h1><br></br>  <!-- -->
     <p style="text-align:center;"><img src = "Lib.jpeg"></p><br></br>
     
     <div id="login_box"> 						
