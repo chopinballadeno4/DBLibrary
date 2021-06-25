@@ -41,7 +41,7 @@ a { text-decoration: none; }
 </head>
 <body>
 <div class="container">
-<h2 class="display-6">상세 화면</h2>
+<h2 class="display-6">책정보</h2><br>
 <table class="table table-bordered text-center">
 <tbody>
 <tr>

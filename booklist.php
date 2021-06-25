@@ -25,7 +25,7 @@ try {
             <!-- Bootstrap CSS -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" 
             rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-
+            <link rel="stylesheet" type="text/css" href="/forlogin/common.css" />
             <style>
             a { text-decoration: none; }
             </style>
@@ -34,8 +34,8 @@ try {
         
         <body>
             <div class="container">
-                <h2 class="text-center">Book List</h2> <!--제목 -->
-                
+                <h2 class="text-center">책목록</h2><br> <!--제목 -->
+               
                 <table class="table table-bordered text-center">
                 <thead>
                     <tr>
@@ -46,12 +46,13 @@ try {
                 </thead>
                 <tbody> <!--책목록 구현 -->
                     <?php
-                        $stmt = $conn -> prepare("SELECT BOOK_ID, BOOK_NAME, PUBLISHER, PRICE FROM BOOK WHERE LOWER(BOOK_NAME) LIKE '%' || :searchWord || '%' ORDER BY BOOK_NAME");
+                      $stmt = $conn -> prepare("SELECT BOOK_ID, BOOK_NAME, PUBLISHER, PRICE FROM BOOK WHERE BOOK_NAME || PUBLISHER LIKE '%' || :searchWord || '%' ORDER BY BOOK_NAME,PUBLISHER");
+                        //$stmt = $conn -> prepare("SELECT BOOK_ID, BOOK_NAME, PUBLISHER, PRICE FROM BOOK WHERE LOWER(PUBLISHER) LIKE '%' || :searchWord || '%' ORDER BY PUBLISHER");
                         $stmt -> execute(array($searchWord));
                         while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
                     ?>
                     <tr>
-                        <td><a href="bookview.php?bookId=<?= $row['BOOK_ID'] ?>"><?= $row['BOOK_NAME'] ?></a></td>
+                        <td><a href="bookview.php?bookId=<?= $row['BOOK_ID'] ?>"><?= $row['BOOK_NAME'] ?><?= $row['PUBLISHER'] ?></a></td>
                         <td><?= $row['PUBLISHER'] ?></td>
                         <td><?= $row['PRICE'] ?></td>
                     </tr>
@@ -60,6 +61,8 @@ try {
                     ?>
                 </tbody>
                 </table>
+
+
             
             <div class="d-grid d-md-flex justify-content-md-end"> <!--입력 단추용 -->
                 <a href="input.php?mode=insert" class="btn btn-primary">등록</a> 
